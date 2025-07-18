@@ -13,3 +13,9 @@ There are two main use cases for Roundabout:
 - **Server to server:** Typically SIP trunks. Roundabout is specified as a proxy on both servers' configuration. Thus Roundabout receives the SIP Request from one server, sees the R-URI is addressed to the other server, and sends it out via that servers required protocol. Contact Header is edited to reflect the change in transport protocol.
 - **Client to server:** In Roundabout terms, a client is any endpoint that is dynamically added/made known to a server by the REGISTER method. This is usually a telephone or soft client - but could also be a PBX or server whose contact details are only determined by what it registers with the Service Provider. It implies that no static configs exist - and thus the server has no means of specifying a proxy to use for requests destined for that client. Normally requests are sent to the Host specified in the Contact Header at time of registering. Roundabout inserts itself in place of the client when registering, so that the Server will send new requests to it first. Roundabout then determines which client the request is meant for by examining the User in the R-URI, which it looks up in its 'client cache' to determine the client's Host value. The client cache is populated dynamically and is not permanent (currently). Thus, if Roundabout is restarted the client cache is emptied: restart the client endpoints to get them to re-register and thereby populate Roundabout's client cache. If a client is not found in the client cache, it will fail to send and receive SIP requests.
 
+The good news is that both use cases can be active simultaneously.
+
+### Server to server
+You will need to inform Roundabout of the two or more servers. Here would be a typical command:  
+``
+### Client to server
