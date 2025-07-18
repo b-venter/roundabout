@@ -1,5 +1,6 @@
 # Roundabout SIP Proxy
-<img width="1422" height="1386" alt="image" src="https://github.com/user-attachments/assets/79f3e255-d607-4eef-99fc-cac35df43277" />
+<img width="356" height="347" alt="image" src="https://github.com/user-attachments/assets/5519bb5a-4816-41d3-81a5-02e2e0ea7894" />
+
 
 Roundabout is a SIP Proxy that facilitates forwarding of SIP Requests and Responses between endpoints (servers, clients) that do not  support each others’ network transport protocols. For example, a soft client might only support WSS (Secure WebSockets). And the SIP server only supports TCP and UDP. Using Roundabout as a proxy allows the client to still communicate with the SIP Server.
 
